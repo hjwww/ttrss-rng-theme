@@ -6,7 +6,6 @@
 .dijitSplitter {
 	background: #eee;
 }
-
 .claro .dijitSplitterV, 
 .claro .dijitGutterV {
     background: none repeat scroll 0 0 #eee;
@@ -41,6 +40,9 @@
 	background: #c40;
 	border: 1px solid #c40; /* rmv */
 	color: #fff;
+}
+.dijitTreeRowSelected .dijitTreeLabel {
+	text-shadow : 0 0 0;
 }
 
 
@@ -197,7 +199,7 @@ div#headlines-toolbar span.r {
 }
 
 
-/* Add 'logo' */
+/* Add 'logo'
 #feeds-holder:before{
     content: "READ";
     color: #ddd;
@@ -207,7 +209,7 @@ div#headlines-toolbar span.r {
     margin-left: 20px;
 	margin-bottom: 20px;
 }
-
+ */
 div#headlines-toolbar {
 	padding: 10px 35px 10px 10px;
     text-align: right;
@@ -256,7 +258,7 @@ div.cdm.expandable {
 }
 
 
-/* hide author, scoring options, publish */
+/* hide author, scoring options, publish button */
 span.author, 
 .hlScorePic, 
 img.pubPic {
@@ -273,6 +275,12 @@ div#floatingTitle {
     position: absolute;
     top: 45px;
     z-index: 50;
+}
+
+div.cdm.expandable.active {
+    background: none repeat scroll 0 0 white !important;
+    border-color: #f90;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1) inset;
 }
 
 span.hlLabelRef {
@@ -314,6 +322,161 @@ span.hlLabelRef {
 
 /* hover row */
 .cdm.expandable:not(.active) .cdmHeader:hover, .hl:hover, .collapseBtn:hover {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.04);
+    background: none repeat scroll 0 0 rgba(255,153,0, 0.1);
     cursor: pointer;
+}
+
+
+
+/* restyle menu */
+#main-toolbar {
+	padding-bottom: 5px;
+}
+#ttrssMain .dijitDialogUnderlay {
+	background: #000;
+	opacity: .4;
+}
+#ttrssMain .dijitDialog {
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	box-shadow: 0 3px 12px rgba(0,0,0,.3);
+}
+#ttrssMain .dijitDialogTitleBar {
+	border: none;
+	padding: 3px 10px;
+	background: #eee;
+	font-weight: bold;
+}
+#ttrssMain .dijitDialogCloseIcon {
+	top: 1px;
+	right: 10px;
+	background: none;
+	font-size: 22px;
+	line-height: 1;
+	font-weight: normal;
+	text-align: right;
+	color: #999;
+	-webkit-transition: color .2s;
+	transition: color .2s;
+}
+#ttrssMain .dijitDialogCloseIcon:hover {
+	color: #222;
+}
+#ttrssMain .dijitDialogCloseIcon:before {
+	content: "\00d7";
+}
+#ttrssMain .dijitDialogPaneContent {
+	border-top-color: #ddd;
+	padding: 10px;
+}
+#ttrssMain .dijitButton .dijitButtonNode {
+	padding: 5px 7px;
+	border-color: #e5e5e5;
+	border-radius: 2px;
+	background: #eee;
+	color: #444;
+	box-shadow: 0 1px 1px rgba(0,0,0,.25);
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+#ttrssMain .dijitButtonHover .dijitButtonNode {
+	background: #e5e5e5;
+	border-color: #ddd;
+	color: #222;
+	box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+#ttrssMain .dijitButtonActive .dijitButtonNode {
+	background: #ddd;
+	border-color: #ccc;
+	box-shadow: inset 0 2px 2px rgba(0,0,0,.1);
+	-webkit-transition: none;
+	transition: none;
+}
+.claro .dijitTextBox,
+.claro .dijitSelect {
+	background: #fff;
+	border-radius: 2px;
+}
+
+
+/* STYLING ************************************************************/
+#content-wrap .dijitSelect,
+#content-wrap .dijitButtonContents,
+#content-wrap .dijitButtonNode,
+#content-wrap .dijitArrowButton {
+	border-color: transparent;
+	background: transparent;
+	color: #000;
+}
+#headlines-toolbar .dijitButtonContents {
+	color: #aaa;
+}
+#main_toolbar_form > * {
+	margin-right: 5px;
+}
+#content-wrap .dijitButtonContents,
+#content-wrap .dijitButtonText {
+	padding-left: 0;
+	padding-right: 0;
+}
+#content-wrap .dijitArrowButtonInner {
+	background: transparent url("feedly/iconsprite.png") -16px 0 no-repeat;
+	background-size: 180px 16px;
+}
+#content-wrap .dijitComboButton .dijitArrowButtonInner {
+	background-position: -18px 0;
+}
+#content-wrap .dijitSelect:hover .dijitButtonContents,
+#content-wrap .dijitDropDownButton:hover .dijitButtonContents,
+#content-wrap .dijitComboButton .dijitButtonContents:hover,
+#content-wrap .dijitOpened .dijitButtonContents {
+ /*	color: #444; */
+}
+#content-wrap .dijitSelect:hover .dijitArrowButtonInner,
+#content-wrap .dijitDropDownButton:hover .dijitArrowButtonInner,
+#content-wrap .dijitComboButton .dijitArrowButtonInner:hover,
+#content-wrap .dijitOpened .dijitArrowButtonInner {
+/*	opacity: .75; */
+}
+#ttrssMain .dijitPopup {
+	padding: 5px 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: 0 3px 12px rgba(0,0,0,.3);
+	background: #fff;
+}
+#ttrssMain .dijitMenu {
+	border: 0;
+}
+#ttrssMain .dijitMenuItem {
+	color: #444;
+}
+#ttrssMain .dijitMenu td {
+	display: none;
+}
+#ttrssMain .dijitMenu .dijitMenuItemLabel {
+	display: table-cell;
+	padding: 4px 10px;
+	border: 0;
+}
+#ttrssMain .dijitSelectSelectedOption .dijitMenuItemLabel {
+	font-weight: normal;
+}
+#ttrssMain .dijitMenuItemHover .dijitMenuItemLabel,
+#ttrssMain .dijitMenuItemSelected .dijitMenuItemLabel {
+	background: #eee;
+	color: #222;
+}
+#ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel {
+	background: #fff;
+	color: #444;
+	font-weight: bold;
+	opacity: 1;
+	padding-top: 5px;
+}
+#ttrssMain .dijitMenuItemDisabled .dijitMenuItemLabel:before {
+	content: "";
+	display: block;
+	padding: 0 0 8px;
+	border-top: 1px solid #ddd;
 }
